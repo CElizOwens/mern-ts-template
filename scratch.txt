@@ -1,0 +1,4 @@
+Sept 15, 2023
+
+Completed setup of:
+Node, Typescript, Eslint, MongoDB Atlas
