@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 // import viteLogo from '/vite.svg';
 import './App.css';
 // import { Button } from 'react-bootstrap';
-import { Note } from './models/note';
+import { Note as NoteModel } from './models/note';
+import Note from './components/Note';
 
 function App() {
-  const [notes, setNotes] = useState<Note[]>([]);
+  const [notes, setNotes] = useState<NoteModel[]>([]);
 
   useEffect(() => {
     async function loadNotes() {
@@ -31,7 +32,7 @@ function App() {
     <>
       <div className="App">
         <h1>Notes</h1>
-        {JSON.stringify(notes)}
+        {notes.map((note) => <Note note={note} key={note._id} />)}
         <p>
           <code>Boilerplate</code> for a MongDB, Express, React, Node, TypeScript and Bootstrap web app with AirBnB ESlint and Prettier linting and formatting.
         </p>
